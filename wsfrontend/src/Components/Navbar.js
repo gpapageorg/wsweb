@@ -23,7 +23,9 @@ function Navbar() {
                 <ul className='nav-menu-items' onClick={showSidebar}>
                 <li className='navbar-toggle'>
                     <Link to="#" className='menu-bars'>
-                        <AiIcons.AiOutlineClose />
+                        <div className='closeIcon'>
+                            <AiIcons.AiOutlineClose />
+                        </div>
                     </Link>
                 </li>
                 {SidebarData.map((item, index) => {
