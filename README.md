@@ -1,1 +1,1 @@
-Web Inteface for weatherStation(s) using React.js And Django
+Web Inteface for weatherStation(s) using React.js And Djanga
