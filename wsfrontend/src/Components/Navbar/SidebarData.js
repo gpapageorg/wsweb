@@ -1,7 +1,8 @@
 import React from "react";
 // import * as FaIcons from "react-icons/fa"
 import * as AiIcons from "react-icons/ai"
-// import * as IoIcons from "react-icons/io"
+import * as BiIcons from "react-icons/bi"
+import * as GoIcons from "react-icons/go"
 
 
 export const SidebarData = [
@@ -12,10 +13,28 @@ export const SidebarData = [
         cName: 'nav-text'  
     },
     {
-        title: 'Overview',
-        path: '/',
-        icon: <AiIcons.AiFillHome />,
+        title: 'Patra',
+        path: '/patras',
+        icon: <BiIcons.BiStation />,
         cName: 'nav-text'  
     },
+    {
+        title: 'Ioannina',
+        path: '/ioannina',
+        icon: <BiIcons.BiStation  />,
+        cName: 'nav-text'  
+    },
+    {
+        title: 'Fortosi',
+        path: '/fortosi',
+        icon: <BiIcons.BiStation  />,
+        cName: 'nav-text'  
+    },
+   {
+    title: 'Graphs',
+    path: '/graphs',
+    icon: <GoIcons.GoGraph />,
+    cName: 'nav-text'  
+},
 
 ]

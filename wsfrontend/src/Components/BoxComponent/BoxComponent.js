@@ -1,7 +1,5 @@
 import React from 'react'
-import Box from '@mui/material/Box';
 import './BoxComponent.css'
-import { Grid } from '@mui/material'
 
 function BoxComponent({ station }) {
   return (
@@ -14,15 +12,19 @@ function BoxComponent({ station }) {
 
             {/* <Grid item xs={6}> */}
               <li>State: Up</li>
-              <li>Temperature:{station.temp}&deg;C</li>
+              <li>Temperature: {station.temp}&deg;C</li>
               <li>Humidity: {station.hum}%</li>
               <li>Pressure: {station.press}hPa</li>
               <li>Altitude: {station.alt}m</li>
             {/* </Grid>
-
-
           </Grid> */}
+
+          <div className='title' style={{fontSize:'20px'}}>
+          Last Report: 1 Minute Ago
           </div>
+
+          </div>
+          
         </div>
       </div>
     </div>

@@ -2,25 +2,28 @@ import './App.css';
 import Navbar from './Components/Navbar/Navbar';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import UnderBar from './Components/Navbar/UnderBar';
-import BoxComponent from './Components/BoxComponent/BoxComponent'
+import Overview from './Pages/Overview'
+import Patras from './Pages/Stations/Patras'
+import Ioannina from './Pages/Stations/Ioannina'
+import Fortosi from './Pages/Stations/Fortosi'
+import Graphs from './Pages/Graphs/Graphs'
+
 function App() {
-  const patras = {name : "Patras", temp: 30, hum: 92, press: 1013, alt:900};
-  const ioannina = {name : "Patras", temp: 30, hum: 90, press: 1013, alt:900};
-  const fortosi = {name : "Patras", temp: 30, hum: 90, press: 1013, alt:900};
 
   return (
     <div className="App">
       <Router>
         <Navbar />
-        <UnderBar />
         <Routes>
-          <Route path='/' />
+          <Route path='/' element={<Overview />}/>
+          <Route path='/patras'  element={<Patras />}/>
+          <Route path='/ioannina'  element={<Ioannina />}/>
+          <Route path='/fortosi'  element={<Fortosi />}/>
+          <Route path='/graphs'  element={<Graphs />}/>
         </Routes>
       </Router>
 
-        <BoxComponent station= {patras}/>
-        <BoxComponent station={ioannina} />
-        <BoxComponent station={fortosi} />
+
       
     </div>
   );
