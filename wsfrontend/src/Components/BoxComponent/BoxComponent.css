@@ -1,0 +1,26 @@
+.box
+{
+    width: 33.33%;
+    height: 300px;
+    display: flex;
+    float: inline-start;
+    position: relative;
+    justify-content: center;
+
+}
+.content
+{
+    margin-top: 5px;
+    background-color: #181823;
+    width: 90%;
+    border-radius: 10px;
+    
+}
+.title{
+    width: 100%;
+    position: relative;
+    font-size: 25px;
+    color: white;
+    text-align: center;
+
+}
