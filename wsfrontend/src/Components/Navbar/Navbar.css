@@ -4,6 +4,7 @@
     display: flex;
     justify-content: start;
     align-items: center;
+    border-bottom: 4px solid #28458a;
 }
 .menu-bars {
     margin-left: 2rem;
@@ -28,6 +29,7 @@
     top: 0;
     left: -100%;
     transition: 650ms;
+    z-index: 1;
 }
 .nav-menu.active{
     left: 0;

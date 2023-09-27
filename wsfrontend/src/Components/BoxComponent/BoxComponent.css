@@ -22,5 +22,12 @@
     font-size: 25px;
     color: white;
     text-align: center;
-
+}
+.mainContent
+{
+    line-height: 180%;
+    margin: 20px;
+    color: white;
+    font-size: 22px;
+    list-style-type: none;
 }
