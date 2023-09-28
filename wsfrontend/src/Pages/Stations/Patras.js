@@ -1,4 +1,3 @@
-import React, { Component } from 'react'
 import UnderBar from '../../Components/Navbar/UnderBar';
 import BoxComponent from '../../Components/BoxComponent/BoxComponent'
 

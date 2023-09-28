@@ -7,7 +7,6 @@ function BoxComponent({ station = { name: 'None', state: 0, temp: -300, hum: -30
       <div className='box'>
         <div className='content'>
           <div className='title'>{station.name}</div>
-          {true &&
 
             <div className='mainContent'>
               <li>State: {station.state} </li>
@@ -15,25 +14,24 @@ function BoxComponent({ station = { name: 'None', state: 0, temp: -300, hum: -30
               <li>Humidity: {station.hum}%</li>
               <li>Pressure: {station.press}hPa</li>
               <li>Altitude: {station.alt}m</li>
-              <div className='title' style={{ fontSize: '20px' }}>
 
+              {/* {console.log(station[0].name)} */}
+
+              {renderObject(station)}
+
+              <div className='title' style={{ fontSize: '20px' }}>
                 Last Report: 1 Minute Ago
               </div>
 
-
             </div>
-          }
-
-
 
         </div>
       </div>
     </div>
   )
 }
-function checkObject() {
 
-}
+
 
 export default BoxComponent;
 
