@@ -13,7 +13,7 @@ export const SidebarData = [
         cName: 'nav-text'  
     },
     {
-        title: 'Patra',
+        title: 'Patras',
         path: '/patras',
         icon: <BiIcons.BiStation />,
         cName: 'nav-text'  
