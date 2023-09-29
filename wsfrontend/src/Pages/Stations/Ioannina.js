@@ -10,7 +10,7 @@ function Ioannina() {
         <div>
             <UnderBar page={"Ioannina"} />
             <div>
-                <BoxComponent station={patraInside}/>
+                {/* <BoxComponent station={patraInside}/> */}
             </div>
         </div>
     )

@@ -10,10 +10,10 @@ function Fortosi() {
     return (
         <div>
             <UnderBar page={"Fortosi"} />
-            <BoxComponent station={patraInside}/>
-            <BoxComponent station={patraOutside}/>
+            {/* <BoxComponent station={patraInside}/>
+            <BoxComponent station={patraOutside}/> */}
         </div>
     )
 }
 
-export default Fortosi
+export default Fortosi;
