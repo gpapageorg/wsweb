@@ -7,15 +7,18 @@ import Patras from './Pages/Stations/Patras'
 import Ioannina from './Pages/Stations/Ioannina'
 import Fortosi from './Pages/Stations/Fortosi'
 import Graphs from './Pages/Graphs/Graphs'
+import { Login } from './Pages/Login/Login';
 
 function App() {
 
   return (
     <div className="App">
       <Router>
-        <Navbar />
+        <Routes> </Routes>
+        {/* <Navbar /> */}
         <Routes>
-          <Route path='/' element={<Overview />}/>
+          <Route path='/' element={<Login />}/>
+          <Route path='/overview' element={<Overview />}/>
           <Route path='/patras'  element={<Patras />}/>
           <Route path='/ioannina'  element={<Ioannina />}/>
           <Route path='/fortosi'  element={<Fortosi />}/>
