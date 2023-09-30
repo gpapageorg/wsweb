@@ -19,7 +19,7 @@ const submit = async e => {
     localStorage.setItem('access_token', data.access);
     localStorage.setItem('refresh_token', data.refresh);
     axios.defaults.headers.common['Authorization'] = `Bearer ${data['access']}`;
-    window.location.href = '/'
+    window.location.href = '/overview'
 }
 return(
      <div className="Auth-form-container">
