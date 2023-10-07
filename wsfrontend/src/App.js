@@ -7,25 +7,31 @@ import Patras from './Pages/Stations/Patras'
 import Ioannina from './Pages/Stations/Ioannina'
 import Fortosi from './Pages/Stations/Fortosi'
 import Graphs from './Pages/Graphs/Graphs'
+import LoginPage from './Pages/Login/LoginPage';
+import PrivateRoute from './Utils/PrivateRoute';
+import { AuthProvider } from './Context/AuthContext'
 
 function App() {
 
   return (
     <div className="App">
       <Router>
-        <Routes> </Routes>
-        <Navbar />
-        <Routes>
-          <Route path='/' element={<Overview />}/>
-          <Route path='/patras'  element={<Patras />}/>
-          <Route path='/ioannina'  element={<Ioannina />}/>
-          <Route path='/fortosi'  element={<Fortosi />}/>
-          <Route path='/graphs'  element={<Graphs />}/>
-        </Routes>
+        <AuthProvider>
+          <Navbar />
+          <Routes>
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/" element={<PrivateRoute><Overview /></PrivateRoute>} />
+            <Route path='/patras' element={<PrivateRoute><Patras /></PrivateRoute>} />
+            <Route path='/ioannina' element={<PrivateRoute><Ioannina /></PrivateRoute>} />
+            <Route path='/fortosi' element={<PrivateRoute><Fortosi /></PrivateRoute>} />
+            <Route path='/graphs' element={<PrivateRoute><Graphs /></PrivateRoute>} />
+
+          </Routes>
+        </AuthProvider>
       </Router>
 
 
-      
+
     </div>
   );
 }

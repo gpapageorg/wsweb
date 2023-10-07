@@ -7,12 +7,14 @@ import { SidebarData } from './SidebarData'
 import './Navbar.css'
 import { IconContext } from 'react-icons/lib'
 import {Grid} from '@mui/material'
+import AuthContext from '../../Context/AuthContext'
+import { useContext } from 'react'
 
 function Navbar() {
     const [sidebar, setSidebar] = useState(false);
 
     const showSidebar = () => setSidebar(!sidebar);
-
+    let { user, logoutUser } = useContext(AuthContext)
     return (
         <>
         <IconContext.Provider value={{color: '#fff'}}>
@@ -37,8 +39,8 @@ function Navbar() {
 
                     <Grid item sm={4}>
                         <Link to="#" className='menu-bars'>
-                            <div style={{marginLeft: 15}}>
-                                <FiIcons.FiLogOut />
+                            <div style={{marginLeft: 15}} >
+                                <FiIcons.FiLogOut onClick={logoutUser}/>
                             </div>
                         </Link>
                     </Grid>
