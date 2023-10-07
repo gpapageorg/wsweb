@@ -17,7 +17,7 @@ function App() {
     <div className="App">
       <Router>
         <AuthProvider>
-          <Navbar />
+          {/* <Navbar /> */}
           <Routes>
             <Route path="/login" element={<LoginPage />} />
             <Route path="/" element={<PrivateRoute><Overview /></PrivateRoute>} />
