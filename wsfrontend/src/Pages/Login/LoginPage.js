@@ -7,7 +7,7 @@ const LoginPage = () => {
 
     return (
         
-        <div className='main'>
+        <div className='main' >
             
         <div className="background">
         <div className="shape"></div>
