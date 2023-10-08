@@ -24,8 +24,8 @@ function App() {
           <DisplayNav />
           <IsLogged/>
           <Routes>
-            <Route path="/login" element={<LoginPage />} />
             <Route path="/" element={<PrivateRoute><Overview /></PrivateRoute>} />
+            <Route path="/login" element={<LoginPage />} />
             <Route path='/patras' element={<PrivateRoute><Patras /></PrivateRoute>} />
             <Route path='/ioannina' element={<PrivateRoute><Ioannina /></PrivateRoute>} />
             <Route path='/fortosi' element={<PrivateRoute><Fortosi /></PrivateRoute>} />
