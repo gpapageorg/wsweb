@@ -10,14 +10,14 @@ import Graphs from './Pages/Graphs/Graphs'
 import LoginPage from './Pages/Login/LoginPage';
 import PrivateRoute from './Utils/PrivateRoute';
 import { AuthProvider } from './Context/AuthContext'
-
+import DisplayNav from './Utils/DisplayNav'
 function App() {
 
   return (
     <div className="App">
       <Router>
         <AuthProvider>
-        <Navbar/>
+          <DisplayNav/>
           <Routes>
             <Route path="/login" element={<LoginPage />} />
             <Route path="/" element={<PrivateRoute><Overview /></PrivateRoute>} />
@@ -28,6 +28,7 @@ function App() {
 
           </Routes>
         </AuthProvider>
+
       </Router>
 
 
