@@ -3,9 +3,9 @@ import BoxComponent from '../Components/BoxComponent/BoxComponent'
 import UnderBar from '../Components/Navbar/UnderBar';
 
 function Overview() {
-    const patras = {Name : "Patras", temp: 30, hum: 92, press: 1013, alt:900};
-    const ioannina = {Name : "Ioannina", temp: 30, hum: 90, press: 1013, alt:900};
-    const fortosi = {Name : "Fortosi", temp: 30, hum: 90, press: 1013, alt:900};
+    const patras = {Name : "Patras", Temperature: 30 + " \u00b0C", Humidity: 92, Pressure: 1013, Altitude:900};
+    const ioannina = {Name : "Ioannina", Temperature: 30 + " \u00b0C", Humidity: 90, Pressure: 1013, Altitude:900};
+    const fortosi = {Name : "Fortosi", Temperature: 30 + " \u00b0C", Humidity: 90, Pressure: 1013, Altitude:900};
   
     return (
         <div>

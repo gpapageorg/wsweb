@@ -14,12 +14,12 @@ function BoxComponent({ station = {
           <div className='mainContent'>
 
             {PrintObjectList(station)}
-
+            </div>
             <div className='title' style={{ fontSize: '20px' }}>
               Last Report: 1 Minute Ago
             </div>
 
-          </div>
+          
 
         </div>
       </div>

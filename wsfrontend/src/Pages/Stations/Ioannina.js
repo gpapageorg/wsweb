@@ -4,13 +4,13 @@ import BoxComponent from '../../Components/BoxComponent/BoxComponent'
 
 
 function Ioannina() {
-    const patraInside = {name : "Inside", state: 1,  temp: 30, hum: 92, press: 1013, alt:900};
+    const ioanninaOutside = {Name : "Outisde", State: 1,  Temperature: 30, Humidity: 92, Pressure: 1013, Altitude:900};
 
     return (
         <div>
             <UnderBar page={"Ioannina"} />
-            <div>
-                {/* <BoxComponent station={patraInside}/> */}
+            <div style={{}}>
+                <BoxComponent station={ioanninaOutside}/>
             </div>
         </div>
     )
