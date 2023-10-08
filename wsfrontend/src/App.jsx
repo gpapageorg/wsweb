@@ -11,8 +11,8 @@ import LoginPage from './Pages/Login/LoginPage';
 import PrivateRoute from './Utils/PrivateRoute';
 import { AuthProvider } from './Context/AuthContext'
 import DisplayNav from './Utils/DisplayNav'
-import { Alert } from '@mui/material';
 import { ToastContainer, toast } from 'react-toastify';
+import IsLogged from './Utils/IsLogged';
 
 function App() {
 
@@ -21,8 +21,8 @@ function App() {
 
       <Router>
         <AuthProvider>
-          <DisplayNav/>
-
+          <DisplayNav />
+          <IsLogged/>
           <Routes>
             <Route path="/login" element={<LoginPage />} />
             <Route path="/" element={<PrivateRoute><Overview /></PrivateRoute>} />
@@ -30,24 +30,25 @@ function App() {
             <Route path='/ioannina' element={<PrivateRoute><Ioannina /></PrivateRoute>} />
             <Route path='/fortosi' element={<PrivateRoute><Fortosi /></PrivateRoute>} />
             <Route path='/graphs' element={<PrivateRoute><Graphs /></PrivateRoute>} />
-    
+
           </Routes>
         </AuthProvider>
 
       </Router>
 
 
+
       <ToastContainer
-            position="top-center"
-            autoClose={900}
-            hideProgressBar={false}
-            newestOnTop={false}
-            closeOnClick
-            pauseOnFocusLoss
-            draggable
-            pauseOnHover
-            theme="dark"
-        />
+        position="top-center"
+        autoClose={1000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
     </div>
   );
 }

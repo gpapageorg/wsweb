@@ -13,8 +13,9 @@ export const AuthProvider = ({children}) => {
     let [authTokens, setAuthTokens] = useState(() => (localStorage.getItem('authTokens') ? JSON.parse(localStorage.getItem('authTokens')) : null))
 
     const navigate = useNavigate()
+    let alert;
 
-    let loginUser = async (e) => {
+    let loginUser = async  (e) => {
         e.preventDefault()
         try{
         const response = await fetch('http://127.0.0.1:8000/api/token/', {
@@ -32,6 +33,7 @@ export const AuthProvider = ({children}) => {
             setAuthTokens(data)
             setUser(jwtDecode(data.access))
             navigate('/')
+            {CallAlert(1, "Welcome Back " + e.target.username.value + "!")}
         } else {
             alert('Something went wrong while loggin in the user!')
         }
@@ -40,11 +42,9 @@ export const AuthProvider = ({children}) => {
         localStorage.removeItem('authTokens')
         setAuthTokens(null)
         setUser(null)
-
-        // alert('Something went wrong while loggin in the user!')
         navigate('/login')
+        {CallAlert(0, "Wrong Credentials")}
 
-        
 
     }
     }
@@ -54,7 +54,9 @@ export const AuthProvider = ({children}) => {
         localStorage.removeItem('authTokens')
         setAuthTokens(null)
         setUser(null)
-        navigate('/login') 
+        navigate('/login')
+        {CallAlert(1, "Logout Successful Bye!")}
+ 
 
     }
 
@@ -67,8 +69,6 @@ export const AuthProvider = ({children}) => {
 
     return(
         <>
-        {CallAlert(1, "Welcome Back")}
-
         <AuthContext.Provider value={contextData}>
             {children}
         </AuthContext.Provider>

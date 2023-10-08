@@ -9,7 +9,7 @@ const CallAlert = (type, message) => {
 
                 toast.error(message, {
                     position: "top-center",
-                    autoClose: 900,
+                    autoClose: 1000,
                     hideProgressBar: false,
                     closeOnClick: true,
                     pauseOnHover: true,
@@ -25,7 +25,7 @@ const CallAlert = (type, message) => {
 
                 toast.success(message, {
                     position: "top-center",
-                    autoClose: 900,
+                    autoClose: 1000,
                     hideProgressBar: false,
                     closeOnClick: true,
                     pauseOnHover: true,
