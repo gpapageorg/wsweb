@@ -20,7 +20,7 @@ const LoginPage = () => {
             <input type="text" placeholder="Username" name="username"/>
             <label for="password">Password</label>
             <input type="password" placeholder="Password" name="password"/>
-            <button type="submit">Log In</button>
+            <button type="submit" className='lbutton'>Log In</button>
 
         </form>
         

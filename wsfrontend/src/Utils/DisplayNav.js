@@ -4,7 +4,6 @@ import AuthContext from '../Context/AuthContext';
 
 const DisplayNav = () => {
     let { user } = useContext(AuthContext)
-    console.log("Hey")
     return !user ? <></> : <Navbar/>;
 }
 

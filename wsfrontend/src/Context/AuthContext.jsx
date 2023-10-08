@@ -1,7 +1,8 @@
 import { createContext, useState } from 'react'
 import jwtDecode from 'jwt-decode';
 import { useNavigate } from 'react-router-dom'
-
+import FailedLoginAlert from '../Alerts/CallAlert';
+import CallAlert from '../Alerts/CallAlert';
 const AuthContext = createContext()
 
 export default AuthContext;
@@ -15,6 +16,7 @@ export const AuthProvider = ({children}) => {
 
     let loginUser = async (e) => {
         e.preventDefault()
+        try{
         const response = await fetch('http://127.0.0.1:8000/api/token/', {
             method: 'POST',
             headers: {
@@ -34,13 +36,27 @@ export const AuthProvider = ({children}) => {
             alert('Something went wrong while loggin in the user!')
         }
     }
+    catch(error){
+        localStorage.removeItem('authTokens')
+        setAuthTokens(null)
+        setUser(null)
+
+        // alert('Something went wrong while loggin in the user!')
+        navigate('/login')
+
+        
+
+    }
+    }
 
     let logoutUser = (e) => {
         e.preventDefault()
         localStorage.removeItem('authTokens')
         setAuthTokens(null)
         setUser(null)
-        navigate('/login')    }
+        navigate('/login') 
+
+    }
 
     let contextData = {
         user: user,
@@ -50,8 +66,12 @@ export const AuthProvider = ({children}) => {
     }
 
     return(
+        <>
+        {CallAlert(1, "Welcome Back")}
+
         <AuthContext.Provider value={contextData}>
             {children}
         </AuthContext.Provider>
+        </>
     )
 }
