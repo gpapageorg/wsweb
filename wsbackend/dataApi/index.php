@@ -1,31 +1,12 @@
 <?php
-    include('./dbRoutines.php');
+    include('./dbRoutines.php'); // File Containing All Necessary Routines Used To Communicate With The Database
+    $station = new stdClass();
 
 
     $conn = initiateConnection($credentials);
-
-    $station = initializeStationObj();
-    getValues($station); http://localhost/api/index.php?loc=patras&name=patrasin&id=5&temp=25&humidity=23&press=1013&altitude=10&soil=10
-
-
-    insertIntoDb($conn,$station);
-
-
-
-
-function initializeStationObj()
-{
-    $station = new stdClass();
-    $station -> location =  -300 ;
-    $station -> name = -300 ;
-    $station -> id =  -300 ;
-    $station -> temp =  -300 ;
-    $station -> hum =  -300 ;
-    $station -> press =  -300 ;
-    $station -> alt =  -300 ;
-    $station -> soil =  -300 ;
-    return $station;
-}
+    
+    getValues($station); // Getting Values From Url
+    insertIntoDb($conn,$station); // Inserting Values Into The Database
 
 function getValues(&$station)
 {
@@ -37,16 +18,5 @@ function getValues(&$station)
     $station -> press = $_GET["press"];
     $station -> alt = $_GET["altitude"];
     $station -> soil = $_GET["soil"];
-}
-function fill($station)
-{
-    $station -> location = "patras";
-    $station -> name = "kostas" ;
-    $station -> id = 0;
-    $station -> temp = 40;
-    $station -> hum = 67;
-    $station -> press = 577;
-    $station -> alt = 8;
-    $station -> soil = 0;
 }
 ?>
