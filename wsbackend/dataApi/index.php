@@ -1,38 +1,16 @@
 <?php
-    include('credentials.php');
+    include('./dbRoutines.php');
 
 
     $conn = initiateConnection($credentials);
 
     $station = initializeStationObj();
-    echo $station->soil;
-    
-   getValues($station); //http://localhost/api/index.php?loc=patras&name=patrasin&id=5&temp=25&humidity=23&press=1013&altitude=10
+    getValues($station); http://localhost/api/index.php?loc=patras&name=patrasin&id=5&temp=25&humidity=23&press=1013&altitude=10&soil=10
 
 
-insertIntoDb($conn,$station);
+    insertIntoDb($conn,$station);
 
 
-function initiateConnection($credentials) 
-{
-    $conn = new mysqli($credentials -> servername, $credentials -> username, $credentials -> password, $credentials -> db);
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-    echo "Connected successfully\n";
-    return $conn;    
-}
-function insertIntoDb($conn, $station)
-{
-    $sqlString = "INSERT INTO ".$station -> location." (Name, id, Temperature, Humidity, Pressure, Altitude, Soil) VALUES('".$station -> name."',".$station -> id.",".$station -> temp.",".$station -> hum."," .$station -> press."," .$station -> alt."," .$station -> soil.")";
-    echo $sqlString;
-    if ($conn->query($sqlString) === TRUE) {
-        echo "New record created successfully\n";
-    } else {
-        echo "Error: " . $sqlString . "<br>" . $conn->error;
-    }
-}
 
 
 function initializeStationObj()
