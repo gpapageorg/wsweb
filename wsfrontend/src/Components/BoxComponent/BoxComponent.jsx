@@ -1,8 +1,9 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import './BoxComponent.css'
 const apiUrl = "http://localhost:8000/db/ask?loc=patras"
 function BoxComponent(location ="null") {
  PullJson()
+ const station = {Name : "Patras", Temperature: 30 + " \u00b0C", Humidity: 92, Pressure: 1013, Altitude:900};
 
   return (
     <div>
@@ -12,7 +13,7 @@ function BoxComponent(location ="null") {
 
           <div className='mainContent'>
 
-            {PullJson()}
+            {PullJson(location)}
             </div>
             <div className='title' style={{ fontSize: '20px' }}>
               Last Report: 1 Minute Ago
@@ -25,36 +26,42 @@ function BoxComponent(location ="null") {
   
 }
 
-// function PrintObjectList(stations)
-// {
-//   let keys = Object.keys(stations);
-//   keys.splice(0,1);
-  
-//   return(
-//     keys.map((keyName, i) => (
-
-//       <li key = {i}>{keyName}: {stations[keyName] }</li>
-      
-//     ))
-//   );
-// }
-function PullJson()
+function PrintObjectList(stations)
 {
-  fetch(apiUrl)
-    .then(response => response.json())
-    .then((jsonData) => {
-      let keys = Object.keys(jsonData);
-      return(
-        keys.map((keyName, i) => (
-      
-          <li key = {i}>{keyName}: {jsonData[keyName] }</li>
-        ))
-      );
+  let keys = Object.keys(stations);
+  keys.splice(0,1);
+  
+  return(
+    // keys.map((keyName, i) => (
 
-    })
-    .catch((error) => {
-     console.log(error)
-    })
+    //   <li key = {i}>{keyName}: {stations[keyName] }</li>
+      
+    // ))
+    <div>Hello</div>
+
+  );
+}
+function PullJson(location)
+{
+  const [data, setData] = useState({});
+
+  useEffect(() => {
+    (async () => {
+      const response = await fetch(apiUrl);
+      const jsonData = await response.json();
+      setData(jsonData);
+    })();
+  }, []);
+
+  let keys = Object.keys(data);
+
+  return (
+    keys.map((keyName, i) => (
+
+      <li key = {i}>{keyName}: {data[keyName] }</li>
+      
+    ))
+   );
   }
 
 export default BoxComponent;
