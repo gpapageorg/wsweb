@@ -11,7 +11,7 @@ function Overview() {
     return (
         <div>
             <UnderBar page={"Overview"}/>
-            <BoxComponent location = "patras" />
+            <BoxComponent location = "patrasin" />
             {/* <BoxComponent station={ioannina} />
             <BoxComponent station={fortosi} /> */}
         </div>
