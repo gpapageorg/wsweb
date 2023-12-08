@@ -13,9 +13,7 @@ import { AuthProvider } from './Context/AuthContext'
 import DisplayNav from './Utils/DisplayNav'
 import { ToastContainer, toast } from 'react-toastify';
 import IsLogged from './Utils/IsLogged';
-
 function App() {
-
   return (
     <div className="App">
 

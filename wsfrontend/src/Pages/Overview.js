@@ -7,12 +7,13 @@ function Overview() {
     const ioannina = {Name : "Ioannina", Temperature: 30 + " \u00b0C", Humidity: 90, Pressure: 1013, Altitude:900};
     const fortosi = {Name : "Fortosi", Temperature: 30 + " \u00b0C", Humidity: 90, Pressure: 1013, Altitude:900};
   
+
     return (
         <div>
             <UnderBar page={"Overview"}/>
-            <BoxComponent station={patras} />
-            <BoxComponent station={ioannina} />
-            <BoxComponent station={fortosi} />
+            <BoxComponent location = "patras" />
+            {/* <BoxComponent station={ioannina} />
+            <BoxComponent station={fortosi} /> */}
         </div>
     )
 }
